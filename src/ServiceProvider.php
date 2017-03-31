@@ -36,7 +36,7 @@ class ServiceProvider extends Provider
      */
     private function loadConfiguration()
     {
-        $configPath = __DIR__.'/loggy.php';
+        $configPath = __DIR__.'/config.php';
 
         $this->publishes([$configPath => config_path('loggy.php')], 'config');
 
