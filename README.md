@@ -114,7 +114,6 @@ php artisan vendor:publish --provider="Tolawho\Loggy\ServiceProvider"
 You call the `Loggy` like you would:
 
 ```php
-// Without the file extension
 Loggy::write('payment', 'Somthing 1...', ['something 1']);
 Loggy::info('payment', 'Somthing 2..', ['something 2']);
 ```
