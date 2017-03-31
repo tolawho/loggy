@@ -53,8 +53,14 @@ The example config:
                 'daily' => false,
                 'level' => 'debug'
             ],
+            'payment' => [
+                'log' => 'payment.log',
+                'daily' => true,
+                'level' => 'info'
+            ],
         ]
     ];
+
 ```
 
 Explain:
