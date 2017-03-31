@@ -1,0 +1,13 @@
+{
+    "name": "tolawho/loggy",
+    "description": "Laravel log with multiple channel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tolawho",
+            "email": "tolawho@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
