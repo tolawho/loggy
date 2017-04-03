@@ -8,6 +8,11 @@
             "email": "tolawho@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Tolawho\\Loggy\\": "src"
+        }
+    },
     "minimum-stability": "dev",
     "require": {}
 }
