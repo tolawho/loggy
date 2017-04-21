@@ -69,9 +69,9 @@ class Writer
     function __call($fnc, $arguments)
     {
         if ($this->levelExist($fnc)) {
-            $context = isset($arguments[2]) ?'a': [];
-            $message = isset($arguments[1]) ?'a': '';
-            $this->put($arguments[0], $fnc, $message, $context);
+	        $context = isset( $arguments[2] ) ? $arguments[2] : [];
+	        $message = isset( $arguments[1] ) ? $arguments[1] : '';
+	        $this->put( $arguments[0], $fnc, $message, $context );
         }
     }
 
