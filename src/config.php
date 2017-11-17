@@ -2,7 +2,7 @@
 
 return [
 
-    'fire_event' => true, // set to false if Loggy should not fire MessageLogged event upon writing to logs
+    'fire_event' => true, // set to false if Loggy should not fire LoggyMessageLogged event upon writing to logs
 
     'channels' => [
         'event' => [
