@@ -1,16 +1,16 @@
 {
-    "name": "tolawho/loggy",
-    "description": "Laravel log with multiple channel",
+    "name": "mattlibera/loggy",
+    "description": "Laravel log with multiple channel (forked from tolawho)",
     "license": "MIT",
     "authors": [
         {
-            "name": "tolawho",
-            "email": "tolawho@gmail.com"
+            "name": "mattlibera",
+            "email": "matt@mattlibera.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Tolawho\\Loggy\\": "src"
+            "Mattlibera\\Loggy\\": "src"
         }
     },
     "minimum-stability": "dev",

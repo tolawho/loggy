@@ -1,12 +1,12 @@
 <?php
 
-namespace Tolawho\Loggy\Facades;
+namespace Mattlibera\Loggy\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * Class Loggy
- * @package Tolawho\Loggy\Facades
+ * @package Mattlibera\Loggy\Facades
  */
 class Loggy extends Facade
 {

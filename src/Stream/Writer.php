@@ -1,12 +1,13 @@
 <?php
 
-namespace Tolawho\Loggy\Stream;
+namespace Mattlibera\Loggy\Stream;
 
 use Monolog\Logger;
+use Mattlibera\Loggy\Events\LoggyMessageLogged;
 
 /**
  * Class Writer
- * @package Tolawho\Loggy\Stream
+ * @package Mattlibera\Loggy\Stream
  */
 class Writer
 {
@@ -103,6 +104,11 @@ class Writer
         }
 
         $this->logger[$channel]->{$level}($message, $context);
+
+        if (config('loggy.fire_event')) {
+            // fire a MessageLogged event
+            event(new LoggyMessageLogged($channel, $level, $message, $context));
+        }
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tolawho\Loggy\Stream;
+namespace Mattlibera\Loggy\Stream;
 
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\StreamHandler;
