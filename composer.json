@@ -14,5 +14,15 @@
         }
     },
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mattlibera\\Loggy\\ServiceProvider"
+            ],
+            "aliases" : {
+                "Loggy": "Mattlibera\\Loggy\\Facades\\Loggy"
+            }
+        }
+    }
 }
