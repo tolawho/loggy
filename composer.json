@@ -1,6 +1,6 @@
 {
     "name": "tolawho/loggy",
-    "description": "Laravel log with multiple channel",
+    "description": "Laravel 5 log with multiple channel",
     "license": "MIT",
     "authors": [
         {
@@ -10,9 +10,19 @@
     ],
     "autoload": {
         "psr-4": {
-            "Tolawho\\Loggy\\": "src"
+            "Tolawho\\Paypal\\": "src"
         }
     },
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tolawho\\Loggy\\ServiceProvider"
+            ],
+            "aliases": {
+                "Loggy": "Tolawho\\Loggy\\Facades\\Loggy"
+            }
+        }
+    }
 }
