@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Tolawho\\Paypal\\": "src"
+            "Tolawho\\Loggy\\": "src"
         }
     },
     "minimum-stability": "dev",
