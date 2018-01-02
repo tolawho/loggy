@@ -1,16 +1,18 @@
 {
-    "name": "mattlibera/loggy",
+    "name": "uncgits/loggy",
     "description": "Laravel log with multiple channel (forked from tolawho)",
     "license": "MIT",
     "authors": [
         {
-            "name": "mattlibera",
-            "email": "matt@mattlibera.com"
+            "name": "UNCG CCPS Developers Team",
+            "email": "ccps-developers-l@uncg.edu",
+            "homepage": "http://its.uncg.edu/",
+            "role": "Developer"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Mattlibera\\Loggy\\": "src"
+            "Uncgits\\Loggy\\": "src"
         }
     },
     "minimum-stability": "dev",
@@ -18,10 +20,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mattlibera\\Loggy\\ServiceProvider"
+                "Uncgits\\Loggy\\ServiceProvider"
             ],
             "aliases" : {
-                "Loggy": "Mattlibera\\Loggy\\Facades\\Loggy"
+                "Loggy": "Uncgits\\Loggy\\Facades\\Loggy"
             }
         }
     }

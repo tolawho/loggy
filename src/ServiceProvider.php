@@ -1,6 +1,6 @@
 <?php
 
-namespace Mattlibera\Loggy;
+namespace Uncgits\Loggy;
 
 use Illuminate\Support\ServiceProvider as Provider;
 
@@ -50,6 +50,6 @@ class ServiceProvider extends Provider
      */
     private function registerLoggy()
     {
-        $this->app->bind('loggy', 'Mattlibera\Loggy\Stream\Writer');
+        $this->app->bind('loggy', 'Uncgits\Loggy\Stream\Writer');
     }
 }

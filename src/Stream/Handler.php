@@ -1,6 +1,6 @@
 <?php
 
-namespace Mattlibera\Loggy\Stream;
+namespace Uncgits\Loggy\Stream;
 
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\StreamHandler;

@@ -1,7 +1,7 @@
 Supports [Laravel 5](http://laravel.com/) writing separate log files with multiple channel.
 [![License](https://poser.pugx.org/tolawho/loggy/license)](https://packagist.org/packages/tolawho/loggy)
 
-# Matt's Fork
+# Uncgits Fork
 
 This is a fork of the original package. Current added features:
 
@@ -25,21 +25,21 @@ This package is updated for package auto-discovery in Laravel 5.5+. When using L
 
 ## Laravel 5.4 and below
 
-Once Composer has installed or updated your packages you need to register `Loggy` with Laravel itself. Open up `config/app.php` and find the providers key, towards the end of the file, and add `Mattlibera\Loggy\ServiceProvider:class`, to the end:
+Once Composer has installed or updated your packages you need to register `Loggy` with Laravel itself. Open up `config/app.php` and find the providers key, towards the end of the file, and add `Uncgits\Loggy\ServiceProvider:class`, to the end:
 
 ```php
 'providers' => [
     ...
-    Mattlibera\Loggy\ServiceProvider::class,
+    Uncgits\Loggy\ServiceProvider::class,
 ],
 ```
 
-Now find the aliases key, again towards the end of the file, and add `'Loggy' => Mattlibera\Loggy\Facades\Loggy::class`, to have easier access to the `Loggy`:
+Now find the aliases key, again towards the end of the file, and add `'Loggy' => Uncgits\Loggy\Facades\Loggy::class`, to have easier access to the `Loggy`:
 
 ```php
 'aliases' => [
     ... 
-    'Loggy' => Mattlibera\Loggy\Facades\Loggy::class,
+    'Loggy' => Uncgits\Loggy\Facades\Loggy::class,
 ],
 ```
 
@@ -48,7 +48,7 @@ Now find the aliases key, again towards the end of the file, and add `'Loggy' =>
 Use `Artisan` to publish the new config file:
 
 ```php
-php artisan vendor:publish --provider="Mattlibera\Loggy\ServiceProvider"
+php artisan vendor:publish --provider="Uncgits\Loggy\ServiceProvider"
 ```
 
 The example config:

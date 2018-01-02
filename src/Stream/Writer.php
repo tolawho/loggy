@@ -1,13 +1,13 @@
 <?php
 
-namespace Mattlibera\Loggy\Stream;
+namespace Uncgits\Loggy\Stream;
 
 use Monolog\Logger;
-use Mattlibera\Loggy\Events\LoggyMessageLogged;
+use Uncgits\Loggy\Events\LoggyMessageLogged;
 
 /**
  * Class Writer
- * @package Mattlibera\Loggy\Stream
+ * @package Uncgits\Loggy\Stream
  */
 class Writer
 {

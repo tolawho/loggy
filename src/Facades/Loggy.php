@@ -1,12 +1,12 @@
 <?php
 
-namespace Mattlibera\Loggy\Facades;
+namespace Uncgits\Loggy\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * Class Loggy
- * @package Mattlibera\Loggy\Facades
+ * @package Uncgits\Loggy\Facades
  */
 class Loggy extends Facade
 {

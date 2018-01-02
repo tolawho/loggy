@@ -1,6 +1,6 @@
 <?php
 
-namespace Mattlibera\Loggy\Events;
+namespace Uncgits\Loggy\Events;
 
 class LoggyMessageLogged
 {
