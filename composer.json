@@ -1,18 +1,16 @@
 {
-    "name": "uncgits/loggy",
-    "description": "Laravel log with multiple channel (forked from tolawho)",
+    "name": "tolawho/loggy",
+    "description": "Laravel 5 log with multiple channel",
     "license": "MIT",
     "authors": [
         {
-            "name": "UNCG CCPS Developers Team",
-            "email": "ccps-developers-l@uncg.edu",
-            "homepage": "http://its.uncg.edu/",
-            "role": "Developer"
+          "name": "tolawho",
+          "email": "tolawho@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Uncgits\\Loggy\\": "src"
+            "Tolawho\\Loggy\\": "src"
         }
     },
     "minimum-stability": "dev",
@@ -20,10 +18,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Uncgits\\Loggy\\ServiceProvider"
+                "Tolawho\\Loggy\\ServiceProvider"
             ],
-            "aliases" : {
-                "Loggy": "Uncgits\\Loggy\\Facades\\Loggy"
+            "aliases": {
+                "Loggy": "Tolawho\\Loggy\\Facades\\Loggy"
             }
         }
     }
