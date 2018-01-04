@@ -105,6 +105,14 @@ class HomeController extends Controller
 }
 ```
 
+You can find the default configuration file at `vendor/tolawho/loggy/src/config.php`.  
+
+You _should_ use Artisan to copy the default configuration file from the `/vendor` directory to `/config/loggy.php` with the following command:
+
+```php
+php artisan vendor:publish --provider="Tolawho\Loggy\ServiceProvider"
+```
+
 # Usage
 
 You call the `Loggy` like you would:
