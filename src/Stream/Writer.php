@@ -1,13 +1,13 @@
 <?php
 
-namespace Uncgits\Loggy\Stream;
+namespace Tolawho\Loggy\Stream;
 
 use Monolog\Logger;
-use Uncgits\Loggy\Events\LoggyMessageLogged;
+use Tolawho\Loggy\Events\LoggyMessageLogged;
 
 /**
  * Class Writer
- * @package Uncgits\Loggy\Stream
+ * @package Tolawho\Loggy\Stream
  */
 class Writer
 {

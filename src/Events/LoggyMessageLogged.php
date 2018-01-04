@@ -1,6 +1,6 @@
 <?php
 
-namespace Uncgits\Loggy\Events;
+namespace Tolawho\Loggy\Events;
 
 class LoggyMessageLogged
 {

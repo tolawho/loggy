@@ -1,6 +1,6 @@
 <?php
 
-namespace Uncgits\Loggy\Stream;
+namespace Tolawho\Loggy\Stream;
 
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\StreamHandler;

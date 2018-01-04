@@ -1,13 +1,8 @@
 Supports [Laravel 5](http://laravel.com/) writing separate log files with multiple channel.
+
+[![Latest Stable Version](https://poser.pugx.org/tolawho/loggy/v/stable)](https://packagist.org/packages/tolawho/loggy)
+[![Total Downloads](https://poser.pugx.org/tolawho/loggy/downloads)](https://packagist.org/packages/tolawho/loggy)
 [![License](https://poser.pugx.org/tolawho/loggy/license)](https://packagist.org/packages/tolawho/loggy)
-
-# Uncgits Fork
-
-This is a fork of the original package. Current added features:
-
-- Fires a `LoggyMessageLogged` event upon writing to logs. You can listen to this event and take action on it accordingly if parameters match. For instance, if a log was written to a certain channel, or was a certain level, you could then fire off an email or text message to system administrators. 
-
-- Adds package auto-discovery metadata to `composer.json` to support Laravel 5.5+
 
 # Requirements
 
@@ -15,8 +10,11 @@ Loggy >= 1.0.0 requires Laravel 5.
 
 # Installation
 
-Currently must be added manually as a repo to `composer.json` - not available on Packagist.
+Require this package with Composer
 
+```bash
+composer require tolawho/loggy
+```
 # Quick Start
 
 ## Laravel 5.5+
@@ -25,21 +23,21 @@ This package is updated for package auto-discovery in Laravel 5.5+. When using L
 
 ## Laravel 5.4 and below
 
-Once Composer has installed or updated your packages you need to register `Loggy` with Laravel itself. Open up `config/app.php` and find the providers key, towards the end of the file, and add `Uncgits\Loggy\ServiceProvider:class`, to the end:
+Once Composer has installed or updated your packages you need to register `Loggy` with Laravel itself. Open up `config/app.php` and find the providers key, towards the end of the file, and add `Tolawho\Loggy\ServiceProvider:class`, to the end:
 
 ```php
 'providers' => [
     ...
-    Uncgits\Loggy\ServiceProvider::class,
+    Tolawho\Loggy\ServiceProvider::class,
 ],
 ```
 
-Now find the aliases key, again towards the end of the file, and add `'Loggy' => Uncgits\Loggy\Facades\Loggy::class`, to have easier access to the `Loggy`:
+Now find the aliases key, again towards the end of the file, and add `'Loggy' => Tolawho\Loggy\Facades\Loggy::class`, to have easier access to the `Loggy`:
 
 ```php
 'aliases' => [
     ... 
-    'Loggy' => Uncgits\Loggy\Facades\Loggy::class,
+    'Loggy' => Tolawho\Loggy\Facades\Loggy::class,
 ],
 ```
 
@@ -48,7 +46,7 @@ Now find the aliases key, again towards the end of the file, and add `'Loggy' =>
 Use `Artisan` to publish the new config file:
 
 ```php
-php artisan vendor:publish --provider="Uncgits\Loggy\ServiceProvider"
+php artisan vendor:publish --provider="Tolawho\Loggy\ServiceProvider"
 ```
 
 The example config:
@@ -115,3 +113,22 @@ You call the `Loggy` like you would:
 Loggy::write('payment', 'Somthing 1...', ['something 1']);
 Loggy::info('payment', 'Somthing 2..', ['something 2']);
 ```
+
+# Event
+
+Upon writing to the logs an instance of `Events\LoggyMessageLogged` is fired. You can write your own Listeners to take action - the event will contain the complete data about the log message:
+
+```php
+
+// Events\LoggyMessageLogged
+
+public function __construct($channel, $level, $message, array $context = [])
+{
+    $this->channel = $channel;
+    $this->level = $level;
+    $this->message = $message;
+    $this->context = $context;
+}
+```
+
+If you wish to disable this, you can do so in the config file, by setting the `fire_event` key to `false`.
