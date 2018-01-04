@@ -3,6 +3,7 @@
 namespace Tolawho\Loggy\Stream;
 
 use Monolog\Logger;
+use Tolawho\Loggy\Events\LoggyMessageLogged;
 
 /**
  * Class Writer
@@ -103,6 +104,11 @@ class Writer
         }
 
         $this->logger[$channel]->{$level}($message, $context);
+
+        if (config('loggy.fire_event')) {
+            // fire a MessageLogged event
+            event(new LoggyMessageLogged($channel, $level, $message, $context));
+        }
     }
 
     /**

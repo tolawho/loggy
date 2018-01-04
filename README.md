@@ -17,6 +17,12 @@ composer require tolawho/loggy
 ```
 # Quick Start
 
+## Laravel 5.5+
+
+This package is updated for package auto-discovery in Laravel 5.5+. When using Laravel 5.5+ you do not need to register the service provider or the alias.
+
+## Laravel 5.4 and below
+
 Once Composer has installed or updated your packages you need to register `Loggy` with Laravel itself. Open up `config/app.php` and find the providers key, towards the end of the file, and add `Tolawho\Loggy\ServiceProvider:class`, to the end:
 
 ```php
@@ -35,7 +41,9 @@ Now find the aliases key, again towards the end of the file, and add `'Loggy' =>
 ],
 ```
 
-Now that you have both of those lines added to `config/app.php` we will use `Artisan` to publish the new config file:
+## All versions of Laravel
+
+Use `Artisan` to publish the new config file:
 
 ```php
 php artisan vendor:publish --provider="Tolawho\Loggy\ServiceProvider"
@@ -47,6 +55,8 @@ The example config:
 <?php
     
     return [
+        'fire_event' => true, // set to false if Loggy should not fire LoggyMessageLogged event upon writing to logs
+        
         'channels' => [
             'event' => [
                 'log' => 'event.log',
@@ -64,6 +74,8 @@ The example config:
 ```
 
 Explain:
+
+* *fire_event*: If false, then the LoggyMessageLogged event will not be fired when a message is written.
 
 * *channels.event*: The `event` is name of channel do you want. Ex `payment`, `audit`
 * *channels.event.log*: The name of log file.
@@ -93,20 +105,6 @@ class HomeController extends Controller
 }
 ```
 
-# Configuration
-
-Once Composer has installed or updated your packages you need to register `Loggy` with Laravel itself. Open up `config/app.php` and find the providers key towards the bottom and add:
-
-```php
-Tolawho\Loggy\ServiceProvider::class,
-```
-
-You can add the Loggy Facade, to have easier access to the `Loggy`.
-
-```php
-'Loggy' => Tolawho\Loggy\Facades\Loggy::class
-```
-
 You can find the default configuration file at `vendor/tolawho/loggy/src/config.php`.  
 
 You _should_ use Artisan to copy the default configuration file from the `/vendor` directory to `/config/loggy.php` with the following command:
@@ -123,3 +121,22 @@ You call the `Loggy` like you would:
 Loggy::write('payment', 'Somthing 1...', ['something 1']);
 Loggy::info('payment', 'Somthing 2..', ['something 2']);
 ```
+
+# Event
+
+Upon writing to the logs an instance of `Events\LoggyMessageLogged` is fired. You can write your own Listeners to take action - the event will contain the complete data about the log message:
+
+```php
+
+// Events\LoggyMessageLogged
+
+public function __construct($channel, $level, $message, array $context = [])
+{
+    $this->channel = $channel;
+    $this->level = $level;
+    $this->message = $message;
+    $this->context = $context;
+}
+```
+
+If you wish to disable this, you can do so in the config file, by setting the `fire_event` key to `false`.
