@@ -41,7 +41,7 @@ class Handler extends StreamHandler
     /**
      * {@inheritdoc}
      */
-    public function isHandling(array $record)
+    public function isHandling(array $record): bool
     {
         if (isset($record['channel'])) {
             return ($record['level'] >= $this->level && $record['channel'] == $this->channel);
